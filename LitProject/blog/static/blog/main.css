@@ -1,0 +1,603 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+/* font-family: 'Roboto', sans-serif; */
+html, body , header, ul {
+    margin:0;
+    padding:0;
+
+
+    }
+body{
+    background-color: #F7F2E7;
+}
+body.login{
+    background-color: #E0ECE4;
+}
+
+/* gestion de la barre de navigation */
+ul#id_rating{
+    list-style-type: none;
+    display: flex;
+    flex-direction: rows;
+}
+
+ul#id_rating.label{
+    height: 20px;
+    width: 50px;
+
+}
+
+
+input#id_rating_0{
+    height: 20px;
+    width: 50px;
+    background-color: #F7F2E7;
+}
+
+input#id_rating_1{
+    height: 20px;
+    width: 50px;
+}
+input#id_rating_2{
+    height: 20px;
+    width: 50px;
+}
+input#id_rating_3{
+    height: 20px;
+    width: 50px;
+}
+
+input#id_rating_4{
+    height: 20px;
+    width: 50px;
+}
+
+ul.header{
+    list-style-type: none;
+    background-color: #E0ECE4;
+    border-bottom: solid;
+    border-color: #797A7E;
+    height:15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name{
+    color: #797A7E;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2em;
+    margin: 5px;
+}
+li.litreview{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+p.login{
+    color: #797A7E;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2em;
+}
+
+div.login{
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    width: 5em;
+	height: auto;
+
+}
+
+ul#nav{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    color: #6F4C5B;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+
+
+
+}
+
+li.nav-items{
+    padding-right: 1em;
+}
+/* gestion du style des articles du blog */
+
+/* articles centrés avec marge */
+div.around_content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+
+}
+
+div.around_button_content{
+    display: flex;
+    justify-content: center;
+    margin: 100px;
+
+}
+
+a.btn{
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+div.around_content_ticket_review{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+
+}
+div.around_content_review{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+
+}
+
+div.content{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    background-color: #D8D3CD;
+    width: 75%;
+    color: #797A7E;
+    font-family: 'Roboto', sans-serif;
+}
+
+div.content-review-update{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    background-color: #D8D3CD;
+    width: 50%;
+    color: #797A7E;
+    font-family: 'Roboto', sans-serif;
+}
+
+div.content-followed{
+    display: flex;
+    justify-content: center;
+
+    width: 75%;
+    color: #797A7E;
+    font-family: 'Roboto', sans-serif;
+
+
+}
+
+
+
+div.content-user-followed{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    background-color: #D8D3CD;
+    width: 50%;
+    color: #797A7E;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+div.content-ticket-review{
+    display: flex;
+    align-items: stretch;
+    flex-direction : column;
+    justify-content: space-between;
+    background-color: #D8D3CD;
+    border: 2px solid #797A7E;
+    width: 75%;
+    color: #797A7E;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+div.ticket-review-image{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+
+}
+
+div.ticket_content{
+    flex: 1;
+    display: flex;
+    width: 60%;
+    flex-direction : column;
+    padding:50px;
+}
+
+div.post-delete{
+    flex: 1;
+    display: flex;
+    width: 10%;
+    flex-direction : column;
+    padding:50px;
+}
+
+div.post_button{
+    display: flex;
+    justify-content: center;
+}
+
+p.ticket-content{
+    font-size: 1.5em;
+}
+
+div.ticket_header{
+    width: 20%;
+    background-color: #797A7E;
+    color: #F7F2E7;
+    display: flex;
+    justify-content: end;
+    flex-direction : column;
+    padding: 15px;
+}
+
+div.ticket_header_userfollows{
+    width: 80%;
+    background-color: #797A7E;
+    color: #F7F2E7;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+}
+
+
+div.ticket_review_header{
+    background-color: #797A7E;
+    color: #F7F2E7;
+    padding: 10px;
+}
+
+a.user_name{
+    font-size: 1.5em;
+}
+
+.date{
+    font-size: 0.7em;
+}
+
+div.image{
+    flex:1;
+    width: 30%;
+    padding: 10px;
+}
+
+div.image_userfollows{
+    flex:1;
+    padding: 10px;
+}
+
+img.profile_image_blog{
+    width: 25%;
+
+}
+
+img.ticket_image{
+    padding: 50px;
+    max-width: 100%;
+    max-height: 100%;
+    align-items: center;
+}
+
+a.ticket_title{
+    font-size: 2.5em;
+
+}
+
+a.ticket_review_title{
+    font-size: 1em;
+}
+
+span.helptext{
+    color:#F7F2E7;
+}
+
+span.helptext:active{
+    color: #797A7E;
+}
+a:link {
+    color: #797A7E;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    text-decoration: none;}
+
+a:visited{
+    color: #797A7E;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    text-decoration: none;}
+
+a:active, a:focus {
+    color: #797A7E;
+    font-weight: bold;}
+
+a.blog_btn:link{
+    color: #F7F2E7;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    text-decoration: none;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+fieldset, fieldset.forms{
+    display: flex;
+    align-items: center;
+    border-style: none;
+    display: flex;
+    flex-direction: column;
+
+}
+fieldset.ticket_review{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+}
+
+div.ticket_review{
+    display: flex;
+    flex-direction: column;
+    background-color: #D8D3CD;
+    align-items: center;
+    margin: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 5px 5px 5px #636466;
+}
+
+
+a.btn-user{
+    text-align: center;
+    color: #797A7E;
+    background-color: #F7F2E7;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 20px;
+    border-style: solid;
+    box-shadow: 5px 5px 5px #636466;
+
+}
+
+button.ticket_review{
+    text-align: center;
+    color: #F7F2E7;
+    background-color: #797A7E;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 20px;
+    border-style: solid;
+    box-shadow: 5px 5px 5px #636466;
+
+}
+a.btn-user-review, button.btn-delete{
+    text-align: center;
+    color: #797A7E;
+    background-color: #D8D3CD;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 20px;
+    border-style: solid;
+    box-shadow: 5px 5px 5px #636466;
+
+}
+
+button.validation, button-btn, a.btn-userfollowed{
+    text-align: center;
+    color: #797A7E;
+    background-color: #D8D3CD;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 20px;
+    border-style: solid;
+    box-shadow: 5px 5px 5px #636466;
+}
+button, a.button-register, button.btn{
+    text-align: center;
+    color: #797A7E;
+    background-color: #E0ECE4;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #797A7E;
+    box-shadow: 5px 5px 5px #636466;
+}
+ a.button-register{
+    font-size: 1.5em;
+}
+p.login{
+    font-size: 1.5em;
+    margin:0;
+}
+
+div.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #E0ECE4;
+    color: #797A7E;
+    font-family: 'Roboto', sans-serif;
+    font-size: .8em;
+    margin: 50px;
+    padding: 30px;
+
+}
+
+form.userf_form{
+    display: flex;
+    align-items: center;
+    background-color: #E0ECE4;
+    color: #797A7E;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    margin: 30px;
+    padding: 10px;
+}
+
+form.userf_form_login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #E0ECE4;
+    color: #797A7E;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    margin: 30px;
+    padding: 10px;
+}
+
+form.userf_form_userfollowed{
+    background-color: #F7F2E7;
+}
+
+form.userf_form_f, form.userf_form_userfollowed, form.userf_form_inscription{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F7F2E7;
+    color: #797A7E;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    margin: 30px;
+    padding: 10px;
+}
+
+form.userf_form_inscription{
+    background-color: #F7F2E7;
+}
+
+
+
+input, textarea{
+    border-radius: 20px;
+    background-color: #F7F2E7;
+    border-style: solid;
+    border-color: #797A7E;
+    box-shadow: 5px 5px 5px #636466;
+    margin: 15px;
+    height: 50px;
+    width: 200px;
+    color: #797A7E;
+    font-family: 'Roboto', sans-serif;
+    font-size: .8em;
+}
+input#id_image{
+    text-align: center;
+    background-color: #11ffee00;
+    box-shadow: none;
+    border-style: none;
+    border-radius: 0;
+    padding-left: 50px;
+    margin: 15px;
+    height: 50px;
+    width: 200px;
+    color:#E0ECE4;
+    font-family: 'Roboto', sans-serif;
+    font-size: .8em;
+}
+
+textarea{
+    height: 250px;
+    width: 500px;
+
+
+}
+
+legend{
+    font-size: 1.5em;
+    margin:15px;
+    text-align: center;
+}
+
+span.helptext, #text{
+    font-size: 0.4em;
+}
+
+span.helptext:active{
+    color: red;
+
+}
+
+div.content-ticket-form{
+    display: flex;
+    display-direction: column;
+    align-items: center;
+    background-color: #D8D3CD;
+    width: 75%;
+    color: #797A7E;
+    font-family: 'Roboto', sans-serif;
+}
+
+fieldset.form-group{
+    color: #797A7E;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+div.form-group{
+    text-align: center;
+}
+
+div.logout{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+    color: #797A7E;
+    font-family: 'Roboto', sans-serif;
+}
+
+p.ticket-content_review{
+    font-size: 1.5em;
+}
+
+div.ticket_header_review{
+    width: 20%;
+    background-color: #797A7E;
+    color: #F7F2E7;
+    display: flex;
+    justify-content: end;
+    flex-direction : column;
+    padding: 15px;
+}

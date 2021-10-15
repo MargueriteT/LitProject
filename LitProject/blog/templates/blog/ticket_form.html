@@ -1,0 +1,25 @@
+{% extends 'users/base.html' %}
+{% block content %}
+    <div class="login-view">
+
+        <article class="one_post">
+                <div class="around_content">
+                 <form class="userf_form_f" method="POST"enctype='multipart/form-data'>
+                    {% csrf_token %}
+                    <fieldset >
+                        <div class="ticket_review">
+                               <legend > Créer un nouveau ticket : </legend>
+                                {{ form }}
+                            </div>
+
+                    </fieldset>
+                    <div >
+                        <button class="ticket_review " type="submit">
+                            Publier
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+   </article>
+{% endblock content %}

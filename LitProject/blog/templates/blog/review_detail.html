@@ -1,0 +1,52 @@
+{% extends 'users/base.html' %}
+{% load static %}
+{% block content %}
+
+    <article class="one_post">
+
+        <div class="around_content">
+
+            <div class="content">
+
+                <div class="ticket_header">
+                    <a class="user_name">{{ object.user }}</a>
+
+                    <small class="date">{{ object.time_created|date:"l d F
+                        Y"}}</small>
+                </div>
+
+                <div class="ticket_content">
+                    <h2><a class="ticket_title">{{ object.headline}}</a></h2>
+
+                    <p class="ticket-content">{{ object.body }}</p>
+                    <div class="around_content_ticket_review">
+
+                        <div class="content-ticket-review">
+                            <div class="ticket_review_header">
+                                <a class="user_name_ticket">{{ object.ticket.user }}</a>
+
+                                <small class="date">{{ object.ticket.time_created|date:"l d F Y"}}</small>
+                            </div>
+                            <div class="ticket-review-image">
+                                <div class="image">
+                                    <img class="ticket_image"
+                                         src="{{ object.ticket.image.url }}">
+                                </div>
+
+                                <div class="ticket_content">
+                                    <h2><a class="ticket_review_title">{{ object.ticket.title}}</a></h2>
+
+                                    <p class="ticket_review_content">{{ object.ticket.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </article>
+
+
+
+{% endblock content %}

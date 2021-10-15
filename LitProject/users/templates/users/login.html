@@ -1,0 +1,36 @@
+{% extends 'users/base2.html' %}
+{% load static %}
+{% block content %}
+    <div class="login-view">
+
+        <article class="one_post">
+                <div class="around_content">
+
+                    <form class="userf_form_login" method="POST">
+                        {% csrf_token %}
+                        <fieldset>
+                            <legend>
+                                Déjà inscrit? Connectez-vous !
+                            </legend>
+                            {{ form }}
+                        </fieldset>
+                        <div>
+                            <button> Se connecter </button>
+
+                        </div>
+                    </form>
+                </div>
+        </article>
+        <article class="one_post">
+                <div class="around_content">
+                    <div class="login">
+                        <p class="login"> Vous n'avez pas encore de compte ?</p>
+                        <p class="login"> Inscrivez-vous maintenant!</p>
+                        <a class="button-register"href="{% url 'register' %}">
+                                S'inscrire </a>
+                    </div>
+                </div>
+        </article>
+    </div>
+
+{% endblock content %}

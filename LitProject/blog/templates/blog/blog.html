@@ -1,0 +1,98 @@
+{% extends 'users/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="around_button_content">
+
+                <a class="btn-user " href="{% url 'ticket-create' %}"> Demander
+                    une
+                    critique </a>
+                <a class="btn-user " href="{% url 'new_review' %}"> Créer une
+                    critique </a>
+
+
+
+    </div>
+    {% for post in all_posts %}
+        {% if post.title %}
+            <article class="one_post">
+                <div class="around_content">
+                    <div class="content">
+
+                        <div class="ticket_header">
+                            <a class="user_name">{{ post.user }}</a>
+
+                            <small class="date">{{ post.time_created|date:"l d F Y"}}</small>
+                        </div>
+                        {% if post.image and post.image != '' %}
+                            <div class="image">
+                                <img class="ticket_image" src="{{ post.image.url }}">
+                            </div>
+                        {% endif %}
+
+                        <div class="ticket_content">
+                            <h2><a class="ticket_title" href="{% url 'ticket-detail' post.pk %}">{{ post.title}}</a></h2>
+
+                            <p class="ticket-content">{{ post.description }}</p>
+                        </div>
+                        {% if post.response == False %}
+                            <div class="ticket_content">
+                                <a class="btn-user-review "href="{% url 'response-review' post.pk %}">Répondre
+                                </a>
+                            </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </article>
+
+        {% elif post.headline %}
+            <article class="one_post">
+
+                <div class="around_content">
+
+                    <div class="content">
+
+                        <div class="ticket_header">
+                            <a class="user_name">{{ post.user }}</a>
+
+                            <small class="date">{{ post.time_created|date:"l d F Y"}}</small>
+                        </div>
+
+                        <div class="ticket_content">
+                            <h2><a class="ticket_title"
+                                   href="{% url 'review-detail' post.pk %}">{{ post.headline}}</a></h2>
+
+                            <p class="ticket-content">{{ post.body }}</p>
+                            <div class="around_content_ticket_review">
+
+                                <div class="content-ticket-review">
+                                    <div class="ticket_review_header">
+                                        <a class="user_name_ticket">{{ post.ticket.user }}</a>
+
+                                        <small class="date">{{ post.ticket.time_created|date:"l d F Y"}}</small>
+                                    </div>
+                                    <div class="ticket-review-image">
+                                        <div class="image">
+                                            <img class="ticket_image"
+                                                 src="{{ post.ticket.image.url }}">
+                                        </div>
+
+                                        <div class="ticket_content">
+                                            <h2><a class="ticket_review_title">{{ post.ticket.title}}</a></h2>
+
+                                            <p class="ticket_review_content">{{ post.ticket.description }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+
+                    </div>
+                </div>
+            </article>
+
+        {% endif %}
+
+    {% endfor %}
+
+{% endblock content %}

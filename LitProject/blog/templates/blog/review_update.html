@@ -1,0 +1,40 @@
+{% extends 'users/base.html' %}
+{% block content %}
+   <article class="one_post">
+        <div class="around_content_review">
+
+                <div class="content-review-update">
+                    <div class="ticket_header">
+                        <a class="user_name">{{ review.ticket.user }}</a>
+
+                        <small class="date">{{ review.ticket.time_created|date:"l d F  Y"}}</small>
+                    </div>
+                    <div class="image">
+                        <img class="ticket_image" src="{{ review.ticket.image.url }}">
+                    </div>
+
+                    <div class="ticket_content">
+                        <h2><a class="ticket_title">{{ review.ticket.title}}</a></h2>
+
+                        <p class="ticket-content">{{ review.ticket.description }}</p>
+                    </div>
+
+                </div>
+
+            <form class="userf_form_f" method="POST">
+                {% csrf_token %}
+
+                <fieldset >
+                    <legend >Review </legend>
+                    {{ form }}
+                </fieldset>
+                <div >
+                    <button class="ticket_review " type="submit">
+                        Publier
+                    </button>
+                </div>
+            </form>
+            </div>
+        </div>
+   </article>
+{% endblock content %}

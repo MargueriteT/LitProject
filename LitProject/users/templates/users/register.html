@@ -1,0 +1,33 @@
+{% extends 'users/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+   <article class="one_post">
+       <div class="around_content">
+           <form class="userf_form_inscription" method="POST">
+                {% csrf_token %}
+                <fieldset class="all_forms">
+                    <legend class="name_field">
+                        S'inscrire aujourd'hui!
+                    </legend>
+                    {{ form.as_table}}
+
+                </fieldset>
+                <button class="validation" type="submit">
+                    S'inscrire
+                </button>
+           </form>
+       </div>
+   </article>
+   <article class="one_post">
+        <div class="around_content">
+           <div class="connect">
+                <small class="connect"> Si vous avez déjà un compte
+                    <a href="{% url 'login' %}">Se connecter </a>
+                </small>
+           </div>
+        </div>
+   </article>
+
+
+{% endblock content %}

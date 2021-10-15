@@ -1,0 +1,15 @@
+{% extends 'users/base.html' %}
+{% block content %}
+
+<div class="logout">
+    <legend> Vous avez été déconnecté </legend>
+    <div>
+        <small>
+            <a class="btn-user " href="{% url 'login' %}"> Se connecter
+            </a>
+        </small>
+    </div>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,71 @@
+{% extends 'users/base.html' %}
+{% load static %}
+{% block content %}
+
+    {% for user_post in user_posts %}
+        {% if user_post.title %}
+            <article class="one_post">
+                <div class="around_content">
+                    <div class="content">
+
+                        <div class="ticket_header">
+                            <a class="user_name">{{ user_post.user }}</a>
+
+                            <small class="date">{{ user_post.time_created|date:"l d F Y"}}</small>
+                        </div>
+
+                        {% if user_post.image and user_post.image != '' %}
+                            <div class="image">
+                                <img class="ticket_image" src="{{ user_post.image.url }}">
+                            </div>
+                        {% endif %}
+
+                        <div class="ticket_content">
+                            <h2><a class="ticket_title">{{ user_post.title}}</a></h2>
+
+                            <p class="ticket-content">{{ user_post.description }}</p>
+                            <div class="post_button">
+                                <a class="btn-user-review "
+                                   href="{% url 'ticket-post-update' user_post.id %}"> Update </a>
+                                <a
+                                        class="btn-user-review"
+                                        href="{%url 'ticket-post-delete' user_post.id %}"> Delete</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </article>
+        {% elif user_post.headline %}
+            <article class="one_post">
+                <div class="around_content">
+                    <div class="content">
+
+                        <div class="ticket_header">
+                            <a class="user_name">{{ user_post.user }}</a>
+
+                            <small class="date">{{ user_post.time_created|date:"l d F Y"}}</small>
+                        </div>
+
+                        <div class="ticket_content">
+                            <h2><a class="ticket_title">{{ user_post.headline}}</a></h2>
+
+                            <p class="ticket-content">{{ user_post.body }}</p>
+                            <div class="post_button">
+                                <a
+                                        class="btn-user-review "href="{% url 'review-post-update' user_post.id %}"> Update </a>
+                                <a
+                                        class="btn-user-review "href="{%url 'review-post-delete' user_post.id %}"> Delete</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </article>
+
+        {% endif %}
+
+    {% endfor %}
+
+{% endblock content %}

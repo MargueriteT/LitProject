@@ -1,0 +1,27 @@
+{% extends 'users/base.html' %}
+{% load static %}
+{% block content %}
+    <form method="POST">
+        <div class="around_content">
+            {% csrf_token %}
+             <div class="userf_form_f">
+                <fieldset class="form-group">
+                    <legend > Delete Post </legend>
+
+                        <h2> Are you sure you want to delete the user followed  {{ object.followed_user.username }}</h2>
+
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn-delete " type="submit">
+                        Yes, delete
+                    </button>
+                    <a class="btn-user" href="{% url 'userfollows-home' %}">
+                        Cancel
+                    </a>
+
+                </div>
+             </div>
+        </div>
+    </form>
+
+{% endblock content %}

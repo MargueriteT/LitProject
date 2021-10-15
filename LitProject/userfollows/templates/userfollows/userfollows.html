@@ -1,0 +1,93 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+
+    <article class="followed">
+        <div class="around_content">
+            <div class="content-search">
+                <form class="userf_form_userfollowed" method="POST">
+                    {% csrf_token %}
+                    <fieldset class="forms">
+                        <legend class="name_field">
+                            Suivre d'autres utilisateurs
+                        </legend>
+                        {{ form }}
+
+                    </fieldset>
+                    <button class="validation" type="submit">
+                        Suivre
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="around_content">
+            <div class="content-followed">
+                <h1 class="content-followed">Mon profil</h1>
+            </div>
+        </div>
+        <div class="around_content">
+            <div class="content-user-followed">
+                <div class="image_userfollows">
+                    <img class="profile_image" src="{{ user.profile.image.url }}">
+                </div>
+                <div class="ticket_header_userfollows">
+                    <a class="user_name">{{ user.username }}</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="around_content">
+            <div class="content-followed">
+                <h1 class="content-followed">Mes abonnements</h1>
+            </div>
+        </div>
+        {% for userfollow in userfollowed %}
+            <div class="around_content">
+                <div class="content-user-followed">
+                    <div class="image_userfollows">
+                            <img class="profile_image"
+                                 src="{{ userfollow.followed_user.profile.image.url }}">
+                    </div>
+                    <div class="ticket_header_userfollows">
+                        <div >
+                            <a  class="user_name">{{ userfollow.followed_user.username }}</a>
+                        </div>
+                        <div>
+                            <a class="btn-userfollowed "href="{%url 'userfollowed-delete' userfollow.pk %}">Delete </a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        {% endfor %}
+        <div class="around_content">
+            <div class="content-followed">
+                <h1>Mes abonnés</h1>
+            </div>
+        </div>
+        {% for userfollow in followedby %}
+
+           <div class="around_content">
+                <div class="content-user-followed">
+                    <div class="image_userfollows">
+                            <img class="profile_image"
+                                 src="{{ userfollow.user.profile.image.url }}">
+                    </div>
+                    <div class="ticket_header_userfollows">
+                        <a class="user_name">{{userfollow.user.username }}</a>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        {% endfor %}
+
+
+    </article>
+
+{% endblock content %}

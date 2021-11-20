@@ -1,7 +1,7 @@
 from abc import ABC
 
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import DeleteView, CreateView, UpdateView, DetailView
 from .forms import ReviewRegisterForm, TicketRegisterForm
@@ -22,7 +22,10 @@ def home(request):
     for review in Review.objects.filter(user=request.user):
         all_posts.append(review)
     for ticket in Ticket.objects.filter(user=request.user):
-        all_posts.append(ticket)
+        if ticket == review.ticket:
+            pass
+        else:
+            all_posts.append(ticket)
     for userfollow in userfollows:
         r = Review.objects.filter(user=userfollow.followed_user)
         for review in r:
@@ -62,9 +65,11 @@ class TicketDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return False
 
 
+
 class ReviewDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Review
     success_url = reverse_lazy('user_posts')
+
 
     def test_func(self):
         post = self.get_object()
@@ -119,7 +124,7 @@ def ResponseCreateReview(request, pk):
             review.save()
             ticket.response = True
             ticket.save()
-            messages.success(request, f'review add')
+            messages.success(request, f'La critique a été ajoutée')
             return redirect('blog-home')
 
     else:
@@ -143,7 +148,7 @@ def ReviewCreateView(request):
             review.user = request.user
             review.ticket = ticket
             review.save()
-            messages.success(request, f'review add')
+            messages.success(request, f'La critique a été ajoutée')
             return redirect('blog-home')
     else:
         form_ticket = TicketRegisterForm()
@@ -163,7 +168,7 @@ def TicketCreateView(request):
             ticket.user = request.user
             ticket.response = False
             ticket.save()
-
+            messages.success(request, f'La demande de critique a été ajoutée')
             return redirect('blog-home')
     else:
         form = TicketRegisterForm()

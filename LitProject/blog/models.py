@@ -9,8 +9,8 @@ class Ticket(models.Model):
     description = models.TextField(max_length=2048, blank=True)
     user = models.ForeignKey(to=settings.AUTH_USER_MODEL,
                              on_delete=models.CASCADE)
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='cover_image_pics/')
+    image = models.ImageField(upload_to='cover_image_pics/', null=True,
+                              blank=True)
     time_created = models.DateTimeField(auto_now_add=True)
     response = models.BooleanField(null=False)
 
@@ -19,13 +19,15 @@ class Ticket(models.Model):
 
     def save(self):
         super().save()
+        if self.image:
+            img = Image.open(self.image.path)
 
-        img = Image.open(self.image.path)
-
-        if img.height > 300 or img.width > 300:
-            output_size = (300, 300)
-            img.thumbnail(output_size)
-            img.save(self.image.path)
+            if img.height > 300 or img.width > 300:
+                output_size = (300, 300)
+                img.thumbnail(output_size)
+                img.save(self.image.path)
+        else:
+            pass
 
 
 class Review(models.Model):

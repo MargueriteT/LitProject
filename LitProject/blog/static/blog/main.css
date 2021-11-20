@@ -13,6 +13,13 @@ body{
 body.login{
     background-color: #E0ECE4;
 }
+div.alert_message{
+    color: #797A7E;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    justify-content: center;
+
+}
 
 /* gestion de la barre de navigation */
 ul#id_rating{
@@ -292,7 +299,7 @@ img.ticket_image{
 }
 
 a.ticket_title{
-    font-size: 2.5em;
+    font-size: 1.5em;
 
 }
 

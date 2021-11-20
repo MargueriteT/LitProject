@@ -72,10 +72,12 @@
                                         <small class="date">{{ post.ticket.time_created|date:"l d F Y"}}</small>
                                     </div>
                                     <div class="ticket-review-image">
-                                        <div class="image">
-                                            <img class="ticket_image"
-                                                 src="{{ post.ticket.image.url }}">
-                                        </div>
+
+                                            <div class="image">
+                                                <img class="ticket_image"
+                                                     src="{{ post.ticket.image.url }}">
+                                            </div>
+                                
 
                                         <div class="ticket_content">
                                             <h2><a class="ticket_review_title">{{ post.ticket.title}}</a></h2>

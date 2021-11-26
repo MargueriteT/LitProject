@@ -1,4 +1,4 @@
-# LitReview 
+![LitReview](LitProjectPreview.jpg)
 
 ## **Description**
 
@@ -24,9 +24,13 @@ Open your Cmd and proceed as indicated:
     
     Navigate to your repository folder: cd path/to/your/folder
     Create a virtual environment: python -m venv env (windows) python3 -m venv env (macos ou Linux)
+    Navigate to the SoftDesk folder : cd LitProject
     Activate this virtual environment: env\Scripts\activate (windows) ou source env/bin/activate (macos ou linux)
     Install project dependencies: pip install -r requirements.txt
-    Navigate to the SoftDesk folder : cd LitProject
+    Navigate to LitProject app
+    Create a new python file name configuration.py : copy con configuration.py
+    Add the secret key to the file : SECRET_KEY = 'yoursecretkey'
+    Go back to the LitProject folder
     Run the program: python manage.py runserver
 
 In the LitProject application, create a configuration.py file from which the

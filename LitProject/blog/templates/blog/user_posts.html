@@ -48,7 +48,28 @@
                         </div>
 
                         <div class="ticket_content">
-                            <h2><a class="ticket_title">{{ user_post.headline}}</a></h2>
+                            <h2><a class="ticket_title">{{ user_post.headline}}</a>
+                            {% if user_post.rating == 5 %}
+                                    <img class="stars"
+                                         src="{% static 'blog/5stars.png' %}">
+                            {% elif user_post.rating == 4 %}
+                                <img class="stars"
+                                     src="{% static 'blog/4stars.png' %}">
+                            {% elif user_post.rating == 3 %}
+                                <img class="stars"
+                                     src="{% static 'blog/3stars.png' %}">
+                            {% elif user_post.rating == 2 %}
+                                <img class="stars"
+                                     src="{% static 'blog/2stars.png' %}">
+                            {% elif user_post.rating == 1 %}
+                                <img class="stars"
+                                     src="{% static 'blog/1star.png' %}">
+                            {% else %}
+                                <img class="stars"
+                                     src="{% static 'blog/nostar.png' %}">
+                            {% endif %}
+
+                            </h2>
 
                             <p class="ticket-content">{{ user_post.body }}</p>
                             <div class="post_button">

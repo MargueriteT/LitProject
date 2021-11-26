@@ -13,7 +13,7 @@ After creating an account and logging into the application, you can see your
 Download the repository from this link to the local folder you want: 
 https://github.com/MargueriteT/LitProject.git
 
-    Clone the repository : git clone git clone https://github.com/MargueriteT/LitProject.git
+    Clone the repository : git clone https://github.com/MargueriteT/LitProject.git
 
 ## **Installation**
 

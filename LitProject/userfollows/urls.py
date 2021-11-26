@@ -3,6 +3,7 @@ from . import views
 from .views import UserFollowedDeleteView
 
 
+
 urlpatterns = [
 
     path('', views.userfollows, name='userfollows-home'),

@@ -11,6 +11,12 @@ from django.contrib import messages
 
 @login_required
 def userfollows(request):
+    """
+    This view allow an user to visualize the user he's following. He also
+    can check which user he is followed by and search an user by is username
+    to start following him thanks to the userfollowed form.
+    """
+
     form = NameForm()
 
     userfollowed = UserFollows.objects.filter(user=request.user)
@@ -45,6 +51,11 @@ def userfollows(request):
 
 
 class UserFollowedDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """
+    This view allow the user to confirm he wants to stop to follow an
+    other user.
+    """
+
     model = UserFollows
     success_url = reverse_lazy('userfollows-home')
 

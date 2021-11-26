@@ -15,6 +15,11 @@ from userfollows.models import UserFollows
 
 @login_required
 def home(request):
+    """
+    This view return tickets and reviews of the user and and those of
+    the users he follows. Display from the most recent to the oldest.
+    """
+
     userfollows = UserFollows.objects.filter(user=request.user)
 
     all_posts = []
@@ -43,6 +48,10 @@ def home(request):
 
 @login_required
 def user_posts(request):
+    """
+    This view return tickets and reviews of the user. Display from the most
+    recent to the oldest.
+    """
     user_posts = sorted(list(chain(Review.objects.filter(user=request.user),
                                    Ticket.objects.filter(user=request.user))),
                         key=lambda instance: instance.time_created,
@@ -55,6 +64,11 @@ def user_posts(request):
 
 
 class TicketDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """
+    This view return the delete confirmation of a ticket. An user can only
+    delete is own ticket.
+    """
+
     model = Ticket
     success_url = reverse_lazy('user_posts')
 
@@ -67,6 +81,11 @@ class TicketDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 
 class ReviewDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """
+    This view return the delete confirmation of a review. An user can only
+    delete is own review.
+    """
+
     model = Review
     success_url = reverse_lazy('user_posts')
 
@@ -79,6 +98,11 @@ class ReviewDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 
 class ReviewUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """
+    This view return a form to allow an user to update a review. An user can
+    only update is own review.
+    """
+
     model = Review
     fields = ['rating', 'headline', 'body']
     template_name = "blog/review_update.html"
@@ -96,6 +120,11 @@ class ReviewUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 
 class TicketUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """
+    This view return a form to allow an user to update a ticket. An user can
+    only update is own ticket.
+    """
+
     model = Ticket
     fields = ['title', 'description', 'image']
     success_url = reverse_lazy('user_posts')
@@ -113,6 +142,13 @@ class TicketUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 @login_required
 def ResponseCreateReview(request, pk):
+    """
+    This view is for review create in response to an already existing ticket.
+    This view recovers data from the review form. If those are valid, a new
+    review is created and a success message is addressed to the user. If
+    data aren't valid, the user must change the incorrect field.
+    """
+
     ticket = Ticket.objects.filter(pk=pk).first()
     if request.method == 'POST':
         form = ReviewRegisterForm(request.POST)
@@ -136,6 +172,15 @@ def ResponseCreateReview(request, pk):
 
 
 def ReviewCreateView(request):
+    """
+    This view is for a ticket and review creation. The user must complete
+    the ticket form and the review form.
+    This view recovers data from the ticket form and review form. If those are
+    valid, a new review is created and a success message is addressed to the
+    user along with the corresponding ticket. If data aren't valid, the user
+    must change the incorrect field.
+    """
+
     if request.method == 'POST':
         form_ticket = TicketRegisterForm(request.POST, request.FILES)
         form_review = ReviewRegisterForm(request.POST)
@@ -160,6 +205,13 @@ def ReviewCreateView(request):
 
 
 def TicketCreateView(request):
+    """
+    This view is for ticket creation.
+    This view recovers data from the ticket form. If those are valid, a new
+    ticket is created and a success message is addressed to the user. If
+    data aren't valid, the user must change the incorrect field.
+    """
+
     if request.method == 'POST':
         form = TicketRegisterForm(request.POST, request.FILES)
 
@@ -177,8 +229,16 @@ def TicketCreateView(request):
 
 
 class ReviewDetailView(DetailView):
+    """
+    This view allow the user to see the details of a specific review.
+    """
+
     model = Review
 
 
 class TicketDetailView(DetailView):
+    """
+    This view allow the user to see the details of a specific ticket.
+    """
+
     model = Ticket

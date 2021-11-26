@@ -5,6 +5,8 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 class Ticket(models.Model):
+    """ Define ticket's attributes """
+
     title = models.CharField(max_length=128)
     description = models.TextField(max_length=2048, blank=True)
     user = models.ForeignKey(to=settings.AUTH_USER_MODEL,
@@ -31,6 +33,8 @@ class Ticket(models.Model):
 
 
 class Review(models.Model):
+    """ Define review's attributes """
+
     ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE)
     rating = models.PositiveSmallIntegerField(validators=[MinValueValidator(
         0), MaxValueValidator(5)])

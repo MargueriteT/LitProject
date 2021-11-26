@@ -4,6 +4,12 @@ from PIL import Image
 
 
 class Profile(models.Model):
+    """
+    The profile class take the user's data to create a new profile when
+    the user registers. A default image is add, that can be update by the
+    user.
+    """
+
     user = models.OneToOneField(to=settings.AUTH_USER_MODEL,
                                 on_delete=models.CASCADE)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')

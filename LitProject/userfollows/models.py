@@ -3,6 +3,10 @@ from django.conf import settings
 
 
 class UserFollows(models.Model):
+    """
+    This class define the relationship to an user and the user he
+    followed. This relationship is unique.
+    """
 
     user = models.ForeignKey(to=settings.AUTH_USER_MODEL,
                              on_delete=models.CASCADE,

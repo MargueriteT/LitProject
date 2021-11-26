@@ -3,6 +3,8 @@ from .models import Ticket, Review
 
 
 class TicketRegisterForm(forms.ModelForm):
+    """ This form allow the user to enter data to create a new ticket """
+
     title = forms.CharField(label="", widget=forms.TextInput(attrs={
         'placeholder': 'Enter the title'}))
     description = forms.CharField(label="", widget=forms.Textarea(attrs={
@@ -14,6 +16,8 @@ class TicketRegisterForm(forms.ModelForm):
 
 
 class ReviewRegisterForm(forms.ModelForm):
+    """ This form allow the user to enter data to create a new review """
+
     Choices = [(1, 1), (2, 2), (3, 3), (4, 4), (5, 5)]
     headline = forms.CharField(label="", widget=forms.TextInput(attrs={
         'placeholder': 'Enter your headline'}))

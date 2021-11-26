@@ -182,7 +182,11 @@ div.content-followed{
 
 }
 
+img.stars{
+    width: 3em;
+	height: auto;
 
+}
 
 div.content-user-followed{
     display: flex;

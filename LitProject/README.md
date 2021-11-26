@@ -12,12 +12,16 @@ After creating an account and logging into the application, you can see your
 
 Download the repository from this link to the local folder you want: 
 https://github.com/MargueriteT/LitProject.git
+
+    Clone the repository : git clone git clone https://github.com/MargueriteT/LitProject.git
+
 ## **Installation**
 
 First, make sure you already have python3 install on your computer. 
 If not, please go to this link: https://www.python.org/downloads/ and follow the instructions. 
 Open your Cmd and proceed as indicated:
 
+    
     Navigate to your repository folder: cd path/to/your/folder
     Create a virtual environment: python -m venv env (windows) python3 -m venv env (macos ou Linux)
     Activate this virtual environment: env\Scripts\activate (windows) ou source env/bin/activate (macos ou linux)

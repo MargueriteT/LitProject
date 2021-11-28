@@ -25,13 +25,11 @@ Navigate to your repository folder: `cd path/to/your/folder`
     
 Create a virtual environment: ``python -m venv env (windows) python3 -m venv env (macos ou Linux)``
 
-Navigate to the SoftDesk folder : ``cd LitProject``
-
 Activate this virtual environment: ``env\Scripts\activate (windows) ou source env/bin/activate (macos ou linux)``
 
 Install project dependencies: ``pip install -r requirements.txt``
 
-Navigate to LitProject app : ``cd LitProject``
+Navigate to LitProject app : ``cd LitProject/LitProject``
 
 Create a new python file name configuration.py : ``copy con configuration.py``
 
